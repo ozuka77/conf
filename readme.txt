@@ -1,5 +1,5 @@
 installation required
-
+axi-cache => apt-cache search
 vundle => gestion des plugins vim
 grc => color 
 sensor => temperature cpu & hdd
