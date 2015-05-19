@@ -1,6 +1,9 @@
 set nocompatible
 filetype off
-
+set number
+set showmatch
+set incsearch
+set cursorline
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
@@ -16,6 +19,7 @@ set laststatus=2
 "Solarized color for vim nothing to do
 Bundle 'altercation/vim-colors-solarized'
 "Undo tree appears on left panel when F5 press
+Plugin 'scrooloose/nerdtree'
 Plugin 'ervandew/supertab'
 Plugin 'klen/python-mode'
 Plugin 'tpope/vim-endwise'
@@ -53,6 +57,8 @@ map <Leader>vm :VimuxPromptCommand("make ")<CR>
 Bundle 'kien/ctrlp.vim'
 "Vimux with some python utils : C-c execute the selected block in ipython
 "None functional  
+Bundle 'DavidEGx/ctrlp-smarttabs'
+
 Bundle 'julienr/vimux-pyutils'
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs = 1
@@ -85,3 +91,7 @@ let g:UltiSnipsListSnippets="<c-e>"
 " this mapping Enter key to <C-y> to chose the current highlight item
 " and close the selection list, same as other IDEs.
 " CONFLICT with some plugins like tpope/Endwise
+nmap <silent> <F3> :NERDTreeToggle<CR>
+let g:ctrlp_extensions = ['smarttabs']
+" pluging pour CtrlP tab next/forward touche F4
+nnoremap <F4> :CtrlPSmartTabs<CR>
